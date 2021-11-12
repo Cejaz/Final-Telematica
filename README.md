@@ -1,3 +1,3 @@
 # Final-Telematica
 
-## Calculador de nota final
+Calculador de nota final
