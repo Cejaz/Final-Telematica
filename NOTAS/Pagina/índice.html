@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>Proyecto Final</title>
+    
+    <link href="vendor/css/prism.css" rel="stylesheet">
+    <link href="vendor/css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    
+  </head>
+
+  <body>
+    <div class="container">
+        <div class="row center">
+          <h1>Proyecto Final Telematica</h1>
+<br>
+
+          <div class="col s12 m6 offset-m3 box-nota z-depth-3">
+            <h3 class="nota-description">Por favor ingresa aquí tus notas actuales:</h3>
+          <a class="btn-settings modal-trigger" href="#modal_settings"><span>configuración</span><i class="small mdi-action-settings"></i></a>
+          <form class="col s12" action="javascript:set_calculateScore()">
+            <div class="notas">
+            </div>
+            <div class="alert-error card-panel red darken-3 z-depth-2">La suma de los porcentajes no puede ser mayor a 100%</div>
+            <div class="row">
+              <div class="left agregarNota">
+                <a href="javascript:void(0)" onclick="set_addField();" class="waves-effect waves-yellow"><i class="mdi-content-add-circle-outline small"></i><span>Agregar nota</span></a>
+              </div>
+            </div>
+            <div class="row btnCalcular">
+              <div class="input-field">
+                <button type="submit" id="btnCalcular" class="waves-effect waves-light btn-large pull-right">calcular nota<i class="mdi-social-school right"></i></button>
+              </div>
+            </div>
+          </form>
+
+    
+          <div id="modal_mensaje" class="modal col s12 m4 offset-m4">
+
+            <div class="modal-content">
+
+              <div id="modal_bien" class="modal_box">
+                <div class="col s4">
+                 <img class="responsive-img" src="img/bien.png" alt="Muy bien">
+                </div>
+                <div class="col s8">
+                  <h5>VAS MUY BIEN</h5>
+                <p>Te hace falta sacar <span class="notatxt"></span> en el <span class="porcentajetxt"></span> restante<br>No te descuides.</p>
+                </div>
+              </div>
+
+              <div id="modal_normal" class="modal_box">
+                <div class="col s4">
+                 <img class="responsive-img" src="img/normal.png" alt="Aún puedes">
+                </div>
+                <div class="col s8"><h5>AÚN PUEDES</h5>
+                <p>Te hace falta sacar <span class="notatxt"></span> en el <span class="porcentajetxt"></span> restante<br>Pon todo el empeño.</p>
+                </div>
+              </div>
+
+              <div id="modal_mal" class="modal_box">
+                <div class="col s4">
+                 <img class="responsive-img" src="img/mal.png" alt="Está muy difícil">
+                </div>
+                <div class="col s8"><h5>JUMM... COMPLICADO</h5>
+                <p>Necesitarías sacar <span class="notatxt"></span> en el <span class="porcentajetxt"></span> restante<br>El próximo semestre es el tuyo.</p>
+                </div>
+              </div>
+
+              <div id="modal_final" class="modal_box">
+                <div class="col s4">
+                 <img class="responsive-img" src="img/normal.png">
+                </div>
+                <div class="col s8"><h5>YA ACABASTE</h5>
+                <p>La nota final te quedó en <span class="notatxt"></span> porque ya entraste el 100% de las notas.</p>
+                </div>
+              </div>
+
+              <div id="modal_mejor" class="modal_box">
+                <div class="col s4">
+                 <img class="responsive-img" src="img/bien.png">
+                </div>
+                <div class="col s8"><h5>YA CORONASTE</h5>
+                <p>No necesitas sacar nota para el final. <span class="notatxt"></span><br> Pero esfuérzate para dejarla altica.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="modal-footer">
+              <a href="#" class="modal-action modal-close waves-effect waves-red btn">CERRAR</a>
+            </div>
+
+          </div>
+        </div>
+
+        
+        <div id="modal_settings" class="modal col s12 m4 offset-m4">
+          <div id="settings" class="modal-content settings">
+            <form action="javascript:set_settings()">
+                <h5>Configuración</h5>
+                <div class="box-container">
+                  <div class="input-field col s6 m6">
+                    <input type="number" step="1" id="notaMin" value="0" class="validate valid" required="">
+                    <label for="notaMin" class="active">Nota mínima:</label>
+                  </div>
+                  <div class="input-field col s6 m6">
+                    <input type="number" id="notaMax" value="5" class="validate valid" required="">
+                    <label for="notaMax" class="active">Nota máxima:</label>
+                  </div>
+                  <div class="input-field col s6 m6">
+                    <input type="number" step="1" id="notaBase" value="3" min="0" max="5" step="0.1" class="validate valid" required="">
+                    <label for="notaMin" class="active">Nota mínima para aprobar:</label>
+                  </div>                          
+                  <div class="input-field col s6 m6">
+                    <input type="number" id="notaDeseada" value="3" min ="0" max="5" step="0.1" class="validate valid" required="">
+                    <label for="notaMax" class="active">Nota final que deseo:</label>
+                  </div>
+                </div>
+            
+          </div> 
+        <div class="modal-footer">
+          <button id="btn-cancelar" type="reset" class="btn-cancelar modal-action modal-close btn-flat">cancelar</button>
+          <button id="btn-guardar" type="submit" class="btn-guardar btn-flat">guardar</button>
+        </div>
+        </form>
+      </div> 
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>if (!window.jQuery) { document.write('<script src="vendor/js/jquery-2.1.1.min.js"><\/script>'); }
+    </script>
+    <script src="vendor/js/materialize.js"></script>
+    <script src="vendor/js/init.js"></script>
+    <script src="js/main.js"></script>
+   
+  </div>
+
+    <script type="text/javascript">
+     document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+    if (e.keyCode == '13') {
+        e.preventDefault()
+        $('#modal_mensaje').closeModal();
+        $('#modal_settings').closeModal();
+    }
+}
+   </script>
+
+  </body>
+</html>

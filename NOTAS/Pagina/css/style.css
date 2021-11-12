@@ -1,0 +1,83 @@
+h1{
+  font-family: 'Pacifico', cursive;
+  color: rgb(41, 35, 35) !important;
+  font-size: 40px !important;
+}
+
+.alert-error {
+  display: none;
+  color: #FFF;
+}
+
+.agregarNota {
+  font-weight: bold;
+  margin-left: 1.5rem;
+  margin-top: 0;
+}
+
+.agregarNota i {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.btnCalcular {
+  margin-bottom: 35px;
+}
+
+.btn-settings {
+  bottom: 0;
+  font-size: 14px;
+  position: absolute;
+  right: 5px;
+}
+
+.btn-settings i {
+  vertical-align: middle;
+}
+
+#btn-cancelar, #btn-guardar {
+  float: none;
+  margin: 0;
+}
+
+.btn-cancelar {
+  color: #E53935;
+}
+
+.btn-guardar {
+  color: #4CAF50;
+}
+
+button:focus.btn-cancelar {
+  background-color: #Ef9A9A;
+}
+
+.box-nota{
+  background-color: #fff;
+  min-height: 250px;
+  padding: 20px !important;
+  position: relative;
+}
+
+.settings .box-container {
+  overflow: auto;
+}
+
+
+.nota-description {
+  font-size: 1em;
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+.not-active {
+   color: #b61616;
+   cursor: default;
+   pointer-events: none;
+}
+
+
+
+
+  
