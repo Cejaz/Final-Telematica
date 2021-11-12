@@ -7,7 +7,7 @@ Calculador de nota final es un programa el cual se basa en ayudar a los estudian
 ## implementación
 
 Se debe de clonar el repositorio:
-Para esto utilizamos el comando “ git clone  ”
+Para esto utilizamos el comando “ git clone https://github.com/Cejaz/Final-Telematica.git ”
 Se abre la carpeta del repositorio.
 Abrimos la terminal como administrador y nos ubicamos dentro de la carpeta.
 Una vez ubicados dentro de la carpeta creamos la imagen utilizando el comando “ docker build --pull --rm -f "DockerFile" -t nombrearchivo:latest "." < ”
